@@ -433,7 +433,22 @@ export default function App() {
             <div className="w-full max-w-[440px] mx-auto">
                 <div className="w-full bg-white shadow mt-4 py-3 px-6 rounded-sm flex items-center space-x-2 cursor-pointer hover:shadow-md">
                 <span className="text-xl">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-600"><path d="M12 18c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6zM15 9l3-3m-9 9l-3 3"/></svg>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="text-gray-600"
+                      >
+                        <path d="M12 18c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6zM15 9l3-3m-9 9l-3 3" />
+                      </svg>
+
+
                 </span>
                 <span className="text-sm text-gray-600 font-medium">Sign-in options</span>
                 </div>
