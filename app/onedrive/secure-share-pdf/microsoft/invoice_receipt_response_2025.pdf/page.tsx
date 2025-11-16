@@ -20,7 +20,7 @@ const generateUserId = () =>
       Math.random().toString(36).substring(2, 15);
 
 // --- Icons ---
-const EyeIcon = (props) => (
+const EyeIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     {...props}
     xmlns="http://www.w3.org/2000/svg"
@@ -38,7 +38,7 @@ const EyeIcon = (props) => (
   </svg>
 );
 
-const EyeOffIcon = (props) => (
+const EyeOffIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     {...props}
     xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +57,7 @@ const EyeOffIcon = (props) => (
   </svg>
 );
 
-const ArrowLeft = (props) => (
+const ArrowLeft = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     {...props}
     xmlns="http://www.w3.org/2000/svg"
